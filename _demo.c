@@ -37,21 +37,17 @@ static struct PyModuleDef demomodule = {
  * Module initialization
  */
 #if PY_MAJOR_VERSION >= 3
-    PyObject * PyInit_demo(void)
+    PyMODINIT_FUNC PyInit_demo(void)
 #else
-    void initdemo(void)
+    PyMODINIT_FUNC initdemo(void)
 #endif
 {
 #if PY_MAJOR_VERSION >= 3
-    PyObject *module = PyModule_Create(&demomodule);
+    return PyModule_Create(&demomodule);
 #else
-    PyObject *module = Py_InitModule("demo", demo_methods);
+    (void) Py_InitModule("demo", demo_methods);
 #endif
-
-#if PY_MAJOR_VERSION >= 3
-    return module;
-#endif
-};
+}
 
 /*
  * Methods definition
