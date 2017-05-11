@@ -1,4 +1,11 @@
 import demo
+import sys
+
+
+if sys.version_info < (3,):
+    integer_types = (int, long,)
+else:
+    integer_types = (int,)
 
 
 def test_echo():
@@ -15,5 +22,5 @@ def test_now():
 
 def test_addition():
     sum = demo.addition(5, 6)
-    assert type(sum) in (int, long)
+    assert type(sum) in integer_types
     assert sum == 11
