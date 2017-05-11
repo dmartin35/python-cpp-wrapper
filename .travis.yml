@@ -9,4 +9,4 @@ before_install:
   - pip install "pytest>=2.9"
 script:
   - python setup.py build_ext --inplace
-  - py.test
+  - py.test test.py
