@@ -15,5 +15,5 @@ def test_now():
 
 def test_addition():
     sum = demo.addition(5, 6)
-    assert type(sum) == int
+    assert type(sum) in (int, long)
     assert sum == 11
