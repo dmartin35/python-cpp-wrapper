@@ -22,6 +22,7 @@ static PyMethodDef demo_methods[] = {
 };
 
 
+#if PY_MAJOR_VERSION >= 3
 /* ! the struct name must respect the format: <name of the module> followed by string "module"*/
 static struct PyModuleDef demomodule = {
    PyModuleDef_HEAD_INIT,
@@ -31,6 +32,7 @@ static struct PyModuleDef demomodule = {
                 or -1 if the module keeps state in global variables. */
    demo_methods
 };
+#endif
 
 
 /*
